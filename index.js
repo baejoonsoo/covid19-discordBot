@@ -1,12 +1,10 @@
-// import axios from "axios";
 const axios = require("axios");
 const { Client, Intents } = require("discord.js");
-const { BOT_TOKEN, prefix, API_KEY } = require("./config.json");
+const { BOT_TOKEN, prefix, API_KEY } = process.env;
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
-
 client.once("ready", () => {
   console.log("디스코드 봇이 준비되었습니다");
 });
